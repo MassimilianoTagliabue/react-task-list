@@ -89,9 +89,19 @@ function App() {
 
 
   const listCurrentTask = currentTask.map((curTask, index) => {
+
+    let color;
+    
+    if(curTask.state === "in_progress"){
+      color = <div className="state purple">{curTask.state}</div>;
+
+    }else{
+      color = <div className="state green">{curTask.state}</div>;
+    }
+
     return (
       <li key={index} className="pad-li">
-        <div><strong>{curTask.title} <div className="state">{curTask.state}</div></strong></div>
+        <div><strong>{curTask.title} {color}</strong></div>
         <div>Priority: {curTask.priority}</div>
         <div>Est. time {curTask.estimatedTime}</div>
       </li>

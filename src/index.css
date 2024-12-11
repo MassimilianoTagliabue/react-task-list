@@ -48,3 +48,11 @@ li div{
     padding: 5px 10px;
     display: inline;
 }
+
+.green{
+    background-color: green;
+}
+
+.purple{
+    background-color: purple;
+}
