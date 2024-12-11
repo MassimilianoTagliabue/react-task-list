@@ -90,18 +90,20 @@ function App() {
 
   const listCurrentTask = currentTask.map((curTask, index) => {
     return (
-      <li key={index}><div>{curTask.title} --- {curTask.state}</div>
-        <div>{curTask.priority}</div>
-        <div>{curTask.estimatedTime}</div>
+      <li key={index} className="pad-li">
+        <div><strong>{curTask.title} <div className="state">{curTask.state}</div></strong></div>
+        <div>Priority: {curTask.priority}</div>
+        <div>Est. time {curTask.estimatedTime}</div>
       </li>
     )
   });
 
-  const listCompletedTask = completedTask.map((curTask,index) => {
+  const listCompletedTask = completedTask.map((curTask, index) => {
     return (
-      <li key={index}><div>{curTask.title} --- {curTask.state}</div>
-        <div>{curTask.priority}</div>
-        <div>{curTask.estimatedTime}</div>
+      <li key={index} className="pad-li">
+        <div><strong>{curTask.title} <div className="state">{curTask.state}</div></strong></div>
+        <div>Priority: {curTask.priority}</div>
+        <div>Est. time {curTask.estimatedTime}</div>
       </li>
     )
   })
@@ -109,11 +111,19 @@ function App() {
 
   return (
     <>
-      <h2>Current Task (4)</h2>
-      <ul>{listCurrentTask}</ul><br/><br/>
+      <h1 className="main-title">Task Manager</h1>
 
-      <h2>Completed Task (6)</h2>
-      <ul>{listCompletedTask}</ul>
+      <div className="container">
+        <div className="current">
+          <h3>Current Task (4)</h3>
+          <ul>{listCurrentTask}</ul>
+        </div>
+
+        <div className="completed">
+          <h3>Completed Task (6)</h3>
+          <ul>{listCompletedTask}</ul>
+        </div>
+      </div>
     </>
   )
 
